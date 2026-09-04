@@ -1,0 +1,24 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>proj 3</title>
+    <style>
+        body{background-color: #CD7B3E;}
+    </style>
+</head>
+<body>
+    <h1>Inverted Index-Based Past Paper Worksheet Generator</h1>
+    <p>This project presents an Inverted Index-Based Past Paper Worksheet Generator designed for O-Level
+    and A-Level students. Existing past paper platforms allow students to access PDFs by year, but very few
+    support topic-wise question filtering, and virtually none provide annotatable worksheets that students
+    can work on directly. Our system parses past paper PDFs, extracts individual questions along with
+    their bounding-box coordinates, and uses a custom inverted index to map composite topic keys to
+    question metadata — enabling fast multi-criteria filtering by subject, topic, paper type, and year range.
+    A 0/1 Knapsack dynamic programming algorithm selects the optimal subset of retrieved questions to
+    meet a user-specified target mark count. The filtered questions are compiled into a structured A4
+    PDF worksheet using vector-preserving stamping, ensuring diagrams and equations render crisply. This
+    project demonstrates how a data structure traditionally associated with search engines can be directly
+    applied to educational tooling.</p>
+    <a href="5054_ALL_10marks.pdf">Sample topical pp generated for physics all topics 10 marks</a>
+</body>
+</html>

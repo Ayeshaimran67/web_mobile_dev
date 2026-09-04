@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #CD7B3E;
+    --ink: #241B12;
+    --ink-soft: #4A3B29;
+    --panel: #1C1712;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 80px 32px 100px;
+  }
+
+  .eyebrow{
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+
+  h1{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 40px;
+  }
+
+  .video-title{
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 18px;
+  }
+
+  /* Portrait frame since this demo is a YouTube Short */
+  .player-frame{
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    background: var(--panel);
+    border-radius: 14px;
+    padding: 10px;
+  }
+
+  .player-ratio{
+    position: relative;
+    width: 100%;
+    padding-top: 177.7%; /* 9:16 */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .player-ratio #player{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Demos</p>
+    <h1>Project Demos</h1>
+
+    <p class="video-title">Cinema Booking System — DB Project Demo</p>
+
+    <div class="player-frame">
+      <div class="player-ratio">
+        <div id="player"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Load the YouTube IFrame Player API script
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    // Called automatically by the IFrame API once it loads
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: 'hJjvlS4C_bc',
+        playerVars: {
+          rel: 0
+        }
+      });
+    }
+  </script>
+</body>
+</html>
